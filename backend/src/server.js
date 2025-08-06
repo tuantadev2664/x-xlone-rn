@@ -38,7 +38,6 @@ const startServer = async () => {
   try {
     // Wait for database connection before starting the server
     await connectDB();
-    console.log("Database connected successfully");
 
     app.listen(ENV.PORT, () => {
       console.log("Server is running on port:", ENV.PORT);
