@@ -3,13 +3,10 @@ import { ENV } from "./env.js";
 
 export const connectDB = async () => {
   try {
-    await mongoose.connect(ENV.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("MongoDB connected successfully");
+    await mongoose.connect(ENV.MONGO_URI);
+    console.log("Connected to DB SUCCESSFULLY ✅");
   } catch (error) {
-    console.error("MongoDB connection failed:", error);
-    process.exit(1); // Exit the process with failure
+    console.log("Error connecting to MONGODB");
+    process.exit(1);
   }
 };
